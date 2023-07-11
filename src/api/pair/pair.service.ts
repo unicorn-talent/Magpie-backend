@@ -33,6 +33,10 @@ export class PairService {
     }
   }
 
+  async onModuleInit() {
+    this.handleCron();
+  }
+
   @Cron('0 */30 * * * *')
   async handleCron() {
     const subgraphUrl = 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3';
